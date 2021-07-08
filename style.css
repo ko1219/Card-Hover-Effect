@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: radial-gradient(#bf953f, #fcf6ba, #b38728, #aa771c);
+  color: #fff;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  text-align: center;
+  padding-top: 70px;
+  letter-spacing: 2px;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc, 0 3px 0 #ccc, 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+
+  perspective: 900px;
+}
+
+.wrapper .card {
+  height: 400px;
+  width: 300px;
+  box-shadow: 0px 20px 50px #555;
+  padding: 20px;
+  display: flex;
+  border-radius: 15px;
+
+  transform: rotateX(60deg) scaleX(0.7);
+  perspective: 900px;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.wrapper .card:hover {
+  transform: rotate(0deg) scale(1) translateY(10px);
+}
+
+#c1 {
+  background: url(image/card-2.jpeg) no-repeat center center/cover;
+}
+
+#c2 {
+  background: url(image/card-1.jpeg) no-repeat center center/cover;
+}
+
+#c3 {
+  background: url(image/card-3.jpeg) no-repeat center center/cover;
+}
+
+.card .card-category {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 2px 30px 0 0;
+  text-transform: uppercase;
+}
+
+.card .card-heading {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* pricing card */
+.pricing-btn {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  height: 60px;
+  width: 200px;
+  margin-top: 85px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #aa771c;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #aa771c);
+  background-size: 350%;
+  color: #fff;
+}
+
+button:before {
+  content: "";
+  background: inherit;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+button:hover:before {
+  opacity: 1;
+  z-index: -1;
+}
+
+button:hover {
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
